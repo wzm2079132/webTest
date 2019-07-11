@@ -204,8 +204,9 @@
             width: 130px;
             height: 130px;
             position: absolute;
-            left: 35px;
+            left: 210px;
             top:60px;
+
         }
 
         .bottom .b3 div:nth-child(1){
@@ -360,8 +361,8 @@
             // $(".a2 div").eq(index).addClass("a").removeClass("b").siblings("div").addClass("b").removeClass("a");
         });
 
-        $("#wrap .a3").click(function () {
-            $(this).siblings(".tu").show();
+        $(".wrap .a3 .a1").click(function () {
+            $(this).parent().siblings(".tu").toggle().parent().siblings(".tu").hide();
         });
 
         //定时器
