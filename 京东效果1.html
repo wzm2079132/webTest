@@ -199,6 +199,7 @@
             float: left;
             margin-left: 15px;
             position: relative;
+            overflow: hidden;
         }
         .bottom .b3 div{
             width: 130px;
@@ -217,27 +218,27 @@
         }
         @keyframes in {
         from{
-        left: 590px;
+        left: 210px;
         }
         to{
-        left: 0px;
+        left: 35px;
         }
         }
         @keyframes out {
         from{
-        left: 0px;
+        left: 35px;
         }
         to{
-        left: -590px;
+        left: -135px;
         }
         }
-        .bottom .b3 div .a{
-        animation: in 1s;
-        left: 0px;
+        .bottom .in{
+        animation: in 3s;
+        left: 35px;
         }
-        .bottom .b3 div .b{
+        .bottom .out{
         animation: out 1s;
-        left: -590px;
+        left: -135px;
         }
 
     </style>
@@ -344,7 +345,7 @@
     <div class="b1"></div>
     <div class="b1"></div>
     <div class="b3">
-        <div></div>
+        <div class="in"></div>
         <div></div>
     </div>
 </div>
@@ -357,25 +358,42 @@
             //获取当前元素的数组下标
             var index=$(this).index();
             // $(".a2 div").eq(index).fadeToggle(3000);
-            $(".a2 div").eq(index).fadeIn(2000).siblings("div").fadeOut(2000);
+            $(".a2 div").eq(index).fadeIn(3000).siblings("div").fadeOut(3000);
             // $(".a2 div").eq(index).addClass("a").removeClass("b").siblings("div").addClass("b").removeClass("a");
         });
 
+        //弹窗
         $(".wrap .a3 .a1").click(function () {
-            $(this).parent().siblings(".tu").toggle().parent().siblings(".tu").hide();
+            $(this).parent().siblings(".tu").toggle().siblings().parent().siblings(".tu").hide();
         });
 
         //定时器
         var i=-1;
-        setInterval(function () {
+        var a;
+        var a=setInterval(function () {
             // $(".a2 div").eq(i).addClass("a").removeClass("b").siblings("div").addClass("b").removeClass("a");
             i++;
             if (i>3){
                 i=-1;
             }
-            $(".a2 div").eq(i).fadeIn(5000).siblings("div").fadeOut(5000);
+            $(".a2 div").eq(i).fadeIn(3000).siblings("div").fadeOut(3000);
+            
+        },5000)
 
-        },8000)
+        //删除定时器
+        // $(".a2 div").mousemove(function () {
+        //     clearInterval(a);
+        // });
+
+
+
+        // setInterval(function () {
+        //     i++;
+        //     if (i>1){
+        //         i=-1;
+        //     }
+        //     $(".bottom .b3 div").eq(i).addClass("a").removeClass("b").siblings("div").addClass("b").removeClass("a");
+        // },8000);
 
     })
 </script>
