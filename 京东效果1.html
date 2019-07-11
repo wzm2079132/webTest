@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .wrap{
+            width: 1168px;
+            height: 470px;
+            border: black 1px solid;
+            margin-left: 100px;
+            margin-top: 30px;
+            position: relative;
+        }
+        .a1{
+            width: 190px;
+            height: 25px;
+            font-family: 幼圆;
+            text-align: center;
+            cursor: pointer;
+            /*border: black 1px solid;*/
+        }
+        .a1:nth-child(odd){
+            background-color: aquamarine;
+        }
+        .tu{
+            width: 1000px;
+            height: 470px;
+            background-color: springgreen;
+            /*background-image: url("img/tu.bmp");*/
+            position: absolute;
+            left: 200px;
+            top: 0;
+            display: none;
+        }
+        .a2{
+            height: 470px;
+            width: 590px;
+            /*border: black 1px solid;*/
+            margin: auto;
+            position: absolute;
+            left: 200px;
+            top: 0;
+            overflow: hidden;
+        }
+        .a2 div{
+            height: 470px;
+            width: 590px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+
+        }
+        .a2 div:nth-child(1){
+            background-image: url("img/1.webp");
+        }
+        .a2 div:nth-child(2){
+            background-image: url("img/2.webp");
+        }
+        .a2 div:nth-child(3){
+            background-image: url("img/3.webp");
+        }
+        .a2 div:nth-child(4){
+            background-image: url("img/4.webp");
+        }
+
+        .a2 ul{
+            list-style: none;
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+        }
+        .a2 ul li{
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border-radius: 50%;
+            float: left;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        .a2 ul li:hover{
+            background-color: #fff333;
+        }
+        .a3{
+            width: 190px;
+            height: 470px;
+            /*border: solid 1px black;*/
+            float: left;
+        }
+        .a4{
+            width: 190px;
+            height: 150px;
+            /*border: solid 1px black;*/
+            margin-top: 5px;
+        }
+        .a5{
+            width: 70px;
+            height: 20px;
+            /*border: solid 1px black;*/
+            text-align: center;
+            margin-top: 110px;
+            font-size: 15px;
+            display: inline-block;
+        }
+        .a6{
+            width: 190px;
+            height: 26px;
+            /*border: solid 1px black;*/
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .a7{
+            width: 190px;
+            height: 26px;
+            /*border: solid 1px black;*/
+            font-size: 18px;
+            margin-top: 3px;
+        }
+        .a8{
+            width: 50px;
+            height: 26px;
+            /*border: solid 1px black;*/
+            font-size: 16px;
+            text-align: center;
+            color: white;
+            background-color: #f00;
+            display: inline-block;
+            /*vertical-align: top;*/
+        }
+        .a9{
+            width: 200px;
+            height: 24px;
+            /*border: solid 1px black;*/
+            font-size: 16px;
+            text-align:left;
+            display: inline-block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .bottom{
+            width: 1100px;
+            height: 275px;
+            position: relative;
+            left: 100px;
+            top: 30px;
+        }
+        .bottom .b1{
+            width: 200px;
+            height: 275px;
+            border: solid 1px red;
+            float: left;
+            margin-left: 15px;
+        }
+        .bottom .b1:nth-child(1){
+            background-color: red;
+        }
+        .bottom .text1{
+            font-size: 35px;
+            color: white;
+            text-align: center;
+            margin-top: 35px;
+        }
+        .bottom .text2{
+            font-size: 20px;
+            color: #aaaaaa;
+            text-align: center;
+            padding-top: 20px;
+        }
+        .bottom .text3{
+            font-size: 20px;
+            color: #fff;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .bottom .text4{
+            font-size: 15px;
+            color: #666;
+            height: 30px;
+            text-align: center;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .bottom .b2{
+            display: inline-block;
+            border: solid 1px red;
+            width: 80px;
+            height: 20px;
+            text-align: center;
+
+        }
+        .bottom .b3{
+            width: 200px;
+            height: 275px;
+            border: solid 1px red;
+            float: left;
+            margin-left: 15px;
+            position: relative;
+        }
+        .bottom .b3 div{
+            width: 130px;
+            height: 130px;
+            position: absolute;
+            left: 35px;
+            top:60px;
+        }
+
+        .bottom .b3 div:nth-child(1){
+            background-image: url("img/21.jpg!q90!cc_130x130");
+        }
+        .bottom .b3 div:nth-child(2){
+            background-image: url("img/22.jpg!q90!cc_130x130");
+        }
+        @keyframes in {
+        from{
+        left: 590px;
+        }
+        to{
+        left: 0px;
+        }
+        }
+        @keyframes out {
+        from{
+        left: 0px;
+        }
+        to{
+        left: -590px;
+        }
+        }
+        .bottom .b3 div .a{
+        animation: in 1s;
+        left: 0px;
+        }
+        .bottom .b3 div .b{
+        animation: out 1s;
+        left: -590px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="a3">
+        <div class="a1" style="margin-top: 15px;">家用电器</div>
+        <div class="a1">安装/维修</div>
+        <div class="a1">手机</div>
+        <div class="a1">电脑</div>
+        <div class="a1">家具</div>
+        <div class="a1">男装/女装</div>
+        <div class="a1">化妆品</div>
+        <div class="a1">女鞋</div>
+        <div class="a1">男鞋</div>
+        <div class="a1">工业品</div>
+        <div class="a1">房产</div>
+        <div class="a1">母婴用品</div>
+        <div class="a1">食品</div>
+        <div class="a1">医药保健</div>
+        <div class="a1">图书</div>
+        <div class="a1">机票</div>
+        <div class="a1">理财</div>
+        <div class="a1">工业品</div>
+    </div>
+
+    <div class="a2">
+        <div class="a"></div>
+        <div class="a"></div>
+        <div class="b"></div>
+        <div class="b"></div>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <div class="tu"></div>
+
+    <div style="float: right">
+        <div class="a4" style="background-image: url('img/5.png');background-repeat: no-repeat">
+            <div class="a5" style="margin-left: 25px;color: red;background-color: #fff">新人福利</div>
+            <div class="a5" style="color: #fff333;background-color: black">PULS会员</div>
+        </div>
+        <div class="a4" style="margin-left: 3px">
+            <div class="a6">京东快报</div>
+            <div class="a7">
+                <!--<div class="a8">最新</div>-->
+                <div class="a9"><a class="a8">最新</a>小米小米大苏打撒旦卡积分卡JFK假发假发打卡机打开</div>
+            </div>
+            <div class="a7">
+                <div class="a9"> <a class="a8">热议</a>小米小米大苏打撒旦卡积分卡JFK假发假发打卡机打开</div>
+            </div>
+            <div class="a7">
+                <div class="a9"> <a class="a8">推荐</a>小米小米大苏打撒旦卡积分卡JFK假发假发打卡机打开</div>
+            </div>
+            <div class="a7">
+                <div class="a9"> <a class="a8">最新</a>小米小米大苏打撒旦卡积分卡JFK假发假发打卡机打开</div>
+            </div>
+        </div>
+        <div class="a4">
+            <table s>
+                <tr>
+                    <td><img src="img/11.jpg" width="60" height="45" alt=""></td>
+                    <td><img src="img/11.jpg" width="60" height="45" alt=""></td>
+                    <td><img src="img/11.jpg" width="60" height="45" alt=""></td>
+                </tr>
+                <tr>
+                    <td><img src="img/11.jpg" width="60" height="45" alt=""></td>
+                    <td><img src="img/11.jpg" width="60" height="45" alt=""></td>
+                    <td><img src="img/11.jpg" width="60" height="45" alt=""></td>
+                </tr>
+                <tr>
+                    <td><img src="img/11.jpg" width="60" height="45" alt=""></td>
+                    <td><img src="img/11.jpg" width="60" height="45" alt=""></td>
+                    <td><img src="img/11.jpg" width="60" height="45" alt=""></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div style="float: right">
+        <div class="a4" style="background-image: url('img/2.bmp')"></div>
+        <div class="a4" style="background-image: url('img/4.bmp')"></div>
+        <div class="a4" style="background-image: url('img/3.bmp')"></div>
+    </div>
+
+</div>
+
+<div class="bottom">
+    <div class="b1">
+        <div class="text1">京东秒杀</div>
+        <div class="text2">FLASH DEALS</div>
+        <div class="text3">本场距离结束还有</div>
+    </div>
+    <div class="b1">
+        <div style="background-image: url('img/11.jpg');width: 200px;height: 200px;background-position: center;background-size: contain;background-repeat: no-repeat"></div>
+        <div class="text4">这是一群可爱的小狗狗这是一群可爱的小狗狗这是一群可爱的小狗狗这是一群可爱的小狗狗</div>
+        <div class="b2" style="font-weight: bold;background-color: red;color: white;margin-left: 20px;">现价￥59</div><div class="b2" style="text-decoration-color: #666666;text-decoration-line: line-through;color: #666666">原价￥79</div>
+    </div>
+    <div class="b1"></div>
+    <div class="b1"></div>
+    <div class="b3">
+        <div></div>
+        <div></div>
+    </div>
+</div>
+
+<script src="js/jquery-3.4.1.min.js"></script>
+<script>
+    $(function () {
+        //轮播图
+        $(".a2 ul li").click(function () {
+            //获取当前元素的数组下标
+            var index=$(this).index();
+            // $(".a2 div").eq(index).fadeToggle(3000);
+            $(".a2 div").eq(index).fadeIn(2000).siblings("div").fadeOut(2000);
+            // $(".a2 div").eq(index).addClass("a").removeClass("b").siblings("div").addClass("b").removeClass("a");
+        });
+
+        $("#wrap .a3").click(function () {
+            $(this).siblings(".tu").show();
+        });
+
+        //定时器
+        var i=-1;
+        setInterval(function () {
+            // $(".a2 div").eq(i).addClass("a").removeClass("b").siblings("div").addClass("b").removeClass("a");
+            i++;
+            if (i>3){
+                i=-1;
+            }
+            $(".a2 div").eq(i).fadeIn(5000).siblings("div").fadeOut(5000);
+
+        },8000)
+
+    })
+</script>
+</body>
+</html>

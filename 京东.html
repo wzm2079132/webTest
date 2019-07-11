@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #wrap{
+            height: 470px;
+            width: 590px;
+            border: black 1px solid;
+            margin: auto;
+            position: relative;
+            overflow: hidden;
+        }
+        #wrap div{
+            height: 470px;
+            width: 590px;
+            position: absolute;
+            left: 590px;
+            top: 0px;
+
+        }
+        #wrap div:nth-child(1){
+            background-image: url("img/1.webp");
+        }
+        #wrap div:nth-child(2){
+            background-image: url("img/2.webp");
+        }
+        #wrap div:nth-child(3){
+            background-image: url("img/3.webp");
+        }
+        #wrap div:nth-child(4){
+            background-image: url("img/4.webp");
+        }
+        @keyframes in {
+            from{
+                left: 590px;
+            }
+            to{
+                left: 0px;
+            }
+        }
+        @keyframes out {
+            from{
+                left: 0px;
+            }
+            to{
+                left: -590px;
+            }
+        }
+        #wrap .a{
+            animation: in 1s;
+            left: 0px;
+        }
+        #wrap .b{
+            animation: out 1s;
+            left: -590px;
+        }
+        #wrap ul{
+            list-style: none;
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+        }
+        #wrap ul li{
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border-radius: 50%;
+            float: left;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        #wrap ul li:hover{
+            background-color: #fff333;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div class="a"></div>
+    <div class="b"></div>
+    <div class="b"></div>
+    <div class="b"></div>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script>
+    $(function () {
+        $("#wrap ul li").mousemove(function () {
+            //获取当前元素的数组下标
+            var index=$(this).index();
+            $("#wrap div").eq(index).addClass("a").removeClass("b").siblings("div").addClass("b").removeClass("a");
+        });
+
+        //定时器
+        var i=-1;
+        setInterval(function () {
+            i++;
+            if (i>3){
+                i=-1;
+            }
+            $("#wrap div").eq(i).addClass("a").removeClass("b").siblings("div").addClass("b").removeClass("a");
+
+        },2000)
+
+    })
+</script>
+</body>
+</html>
